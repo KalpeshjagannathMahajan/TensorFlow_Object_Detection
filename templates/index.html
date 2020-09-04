@@ -1,0 +1,59 @@
+<html>
+{% load static %}
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+	<title>Tensorflow Object Detection</title>
+</head>
+{% block content %}
+<body>
+	<div style="margin-top: 30px; height: 100%">
+		{% csrf_token %}
+		<script>
+		const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+		</script>
+		<div class="maindiv">
+			<div class="secondary">
+				<h1 style="color:white; font-size: xxx-large;">Tensorflow <span style="color: black">Object</span> Detection</h1>
+				<br>
+				<br>
+				<p class = 'list'>
+					This is the example of Tensorflow object detection model integrated in django.<br><br>
+					"SSD_MOBILENET_V2_FPNLITE_320X320_COCO17_TPU-8" model is used to detect objects.
+				</p>
+				<br>
+				<br>
+				<br>
+				<button id='detect' class = 'button' onclick="detect_objects()" type="button">Detect Objects</button>
+			</div>
+		</div>
+		<div class='seconddiv'>
+			<div style="position: absolute;height: 100%;width: 60%;" id='upload_image'>
+				<div class="center">
+					<div class="title">
+						<h1>CLICK TO UPLOAD</h1>
+						<h5 id='message'></h5>
+					</div>
+
+					<div class="dropzone">
+						<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+						<input id='input_image' type="file" class="upload-input" />
+					</div>
+					<div>
+						<h5 id='image_name_tag'></h5>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img id='input_image_tag' src="/media/input_images/people.jpeg" alt="Italian Trulli">
+			</div>
+			<div>
+				<img id='output_image_tag' src="/media/output_images/people.jpeg" alt="Italian Trulli">
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="{% static 'index.js' %}"></script>
+{% endblock content %}
+</html>

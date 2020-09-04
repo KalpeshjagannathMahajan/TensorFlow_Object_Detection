@@ -1,0 +1,44 @@
+<html>
+{% load static %}
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+	<title>Tensorflow Object Detection</title>
+</head>
+{% block content %}
+<body>
+	<div style="margin-top: 30px; height: 100%">
+		<div class="maindiv">
+			<div class="secondary">
+				<h1 style="color:white; font-size: xxx-large;">Tensorflow <span style="color: black">Object</span> Detection</h1>
+				<br>
+				<br>
+				<p class = 'list'>
+					This is the example of Tensorflow object detection model integrated in django.<br><br>
+					"SSD_MOBILENET_V2_FPNLITE_320X320_COCO17_TPU-8" model is used to detect objects.
+				</p>
+				<br>
+				<br>
+				<br>
+				<button id='detect' class = 'button' type="button">Lets get Started</button>
+			</div>
+		</div>
+		<div class='seconddiv'>
+			<div style="position: absolute;height: 100%;width: 60%;" id='upload_image'>
+				<div class="center">
+					<div class="title">
+						<h1>Drop file to upload</h1>
+					</div>
+
+					<div class="dropzone">
+						<img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+						<input id='input_image' type="file" class="upload-input" />
+					</div>
+					<h5 style="color: #666">CLICK TO SELECT</h5>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+{% endblock content %}
+</html>

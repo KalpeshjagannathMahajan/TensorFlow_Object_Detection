@@ -1,0 +1,5 @@
+media/input_images/*
+media/output_images/*
+media/images/*
+*/__pycache__/*
+__pycache__/
